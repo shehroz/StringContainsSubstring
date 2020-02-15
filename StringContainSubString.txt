@@ -1,4 +1,14 @@
-static void Main(string[] args)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Algorithms
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
             string FullString = "Shehrozisagoodboy";
             string substr = "ali";
@@ -7,9 +17,11 @@ static void Main(string[] args)
             else
                 Console.WriteLine("substring is not present");
 
-        }
 
-public static bool IsContainSubstring(string FullString, string substring)
+            Console.ReadKey();
+
+        }
+        public static bool IsContainSubstring(string FullString, string substring)
         {
             bool IsFound = false;
             for (int i = 0; i < FullString.Length; i++)
@@ -31,3 +43,5 @@ public static bool IsContainSubstring(string FullString, string substring)
             }
             return IsFound;
         }
+    }
+}
