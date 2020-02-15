@@ -12,7 +12,7 @@ namespace Algorithms
         {
             string FullString = "Shehrozisagoodboy";
             string substr = "ali";
-            if (IsContainSubstring(FullString, substr))
+            if (IsContainSubstring(FullString, substr))//CheckSubstringOptimized(FullString, substr))
                 Console.WriteLine("substr is present");
             else
                 Console.WriteLine("substring is not present");
@@ -40,6 +40,33 @@ namespace Algorithms
                 }
                 if (IsFound)
                     return IsFound;
+            }
+            return IsFound;
+        }
+		
+		public static bool CheckSubstringOptimized(string Fullstr, string substr)
+        {
+            bool IsFound = false;
+            for (int i = 0; i < Fullstr.Length; i++)
+            {
+                if (Fullstr[i] == substr[0])
+                {
+                    for (int j = 1; j < substr.Length; j++)
+                    {
+                        if (Fullstr[i + j] == substr[j])
+                            IsFound = true;
+                        else
+                        {
+                            IsFound = false;
+                            break;
+                        }
+                    }
+
+                    if (IsFound)
+                        return IsFound;
+                }
+
+
             }
             return IsFound;
         }
