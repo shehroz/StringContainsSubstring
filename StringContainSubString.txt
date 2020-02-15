@@ -1,0 +1,33 @@
+static void Main(string[] args)
+        {
+            string FullString = "Shehrozisagoodboy";
+            string substr = "ali";
+            if (IsContainSubstring(FullString, substr))
+                Console.WriteLine("substr is present");
+            else
+                Console.WriteLine("substring is not present");
+
+        }
+
+public static bool IsContainSubstring(string FullString, string substring)
+        {
+            bool IsFound = false;
+            for (int i = 0; i < FullString.Length; i++)
+            {
+                for (int j = 0; j < substring.Length; j++)
+                {
+                    if (FullString[i + j] == substring[j])
+                    {
+                        IsFound = true;
+                    }
+                    else
+                    {
+                        IsFound = false;
+                        break;
+                    }
+                }
+                if (IsFound)
+                    return IsFound;
+            }
+            return IsFound;
+        }
